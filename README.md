@@ -2,16 +2,31 @@
 
 Create images using dices
 
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content: space-around; flex-direction: row;">
   <div>
-    <p>Before</p>
-    <img src="tests/data/robert_smith-2-1.jpg" alt="Before Image" width="300"/>
+    <p style="text-align: center">Original</p>
+    <img src="tests/data/robert_smith-2-1.jpg" width="200"/>
   </div>
   <div>
-    <p>After</p>
-    <img src="tests/data/robert_smith-2-1.diceart.png" alt="After Image" width="300"/>
+    <p style="text-align: center">Dice Art</p>
+    <img src="tests/data/robert_smith-2-1.diceart.png" width="200"/>
   </div>
 </div>
+
+## Usage
+
+```bash
+# clone the repo
+git clone https://github.com/MathisTLD/diceart.git
+# cd to the project's root
+cd diceart
+# install deps and activate virtual env
+pixi shell
+# check help
+diceart --help
+# convert an image
+diceart ./tests/data/robert_smith-1.jpg
+```
 
 ## Development
 
