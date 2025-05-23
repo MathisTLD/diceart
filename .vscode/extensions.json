@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "matangover.mypy",
+        "esbenp.prettier-vscode",
+        "jjjermiah.pixi-vscode"
+    ]
+}

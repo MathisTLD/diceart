@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "internalConsole",
+            "justMyCode": true,
+            "purpose": [
+                "debug-test"
+            ],
+            // this configuration is also used when using debugger in pytest tests
+            "env": {
+                // see https://github.com/prefix-dev/pixi/issues/2859#issuecomment-2636321586
+                "PYTHONNOUSERSITE": "1"
+            }
+        }
+    ]
+}

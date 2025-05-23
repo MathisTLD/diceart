@@ -1,0 +1,52 @@
+[project]
+authors = [
+  { "name" = "Mathis Tailland", "email" = "mathis.tailland@gmail.com" },
+]
+name = "diceart"
+version = "0.1.0"
+description = "Create images using dices"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+scripts = { "diceart" = "diceart.cli:app" }
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.coverage.run]
+omit = [".pixi/*", "tests/*"]
+[tool.coverage.report]
+exclude_also = [
+  # from https://coverage.readthedocs.io/en/7.6.10/excluding.html#advanced-exclusion
+  "def __repr__",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "class .*\\bProtocol\\):",
+  "@(abc\\.)?abstractmethod",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+lint.select = ["E", "F"]
+lint.ignore = []
+# Allow unused variables when underscore-prefixed.
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Unlike Flake8, default to a complexity level of 10.
+lint.mccabe.max-complexity = 10
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+addopts = "-rP"
+
+[tool.mypy]
+# prevents error: Source file found twice under different module names: "tests.testutils.paths" and "testutils.paths"
+namespace_packages = false
